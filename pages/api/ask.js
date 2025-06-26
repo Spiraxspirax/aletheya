@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (!apiKey) {
     return res.status(401).json({ error: 'API key missing from environment' });
   }
-
+console.log("API Key present?", !!process.env.OPENROUTER_API_KEY);
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
