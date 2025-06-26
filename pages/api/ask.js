@@ -5,6 +5,12 @@ export default async function handler(req, res) {
  if (!apiKey) {
     return res.status(401).json({ error: 'API key missing from environment' });
   }
+
+  import streamlit as st
+import os
+
+st.write("🔐 OPENROUTER_API_KEY present:", os.getenv("OPENROUTER_API_KEY") is not None)
+  
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
