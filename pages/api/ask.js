@@ -9,8 +9,10 @@ export default async function handler(req, res) {
   import streamlit as st
 import os
 
-st.write("🔐 OPENROUTER_API_KEY present:", os.getenv("OPENROUTER_API_KEY") is not None)
-  
+st.write("🔐 OPENROUTER_API_KEY present:", os.getenv("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") is not None)
+
+
+ 
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
